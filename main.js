@@ -152,7 +152,7 @@ function main() {
 	frames = 0;
 	keystate = {};
 	// keeps track of the keybourd input
-	document.addEventListener("keydown", function(evt) {
+	document.addEventListener("keydown", function(evt) {		
 		keystate[evt.keyCode] = true;
 	});
 	document.addEventListener("keyup", function(evt) {
@@ -168,7 +168,7 @@ function main() {
  */
 function init() {
 	record = false;
-	alert("Jogar?");	
+	alert("Press OK to play!");	
 	document.getElementsByTagName('body')[0].click();
 	aux_rows = ROWS;
 	aux_cols = COLS;		
@@ -181,7 +181,7 @@ function init() {
 	setFood();
 	interval = setInterval(function () {
 		setFood();
-	}, (Math.random()*6) + 4 * 1000);	
+	}, ((Math.random()*10) + 5) * 1000);	
 }
 /**
  * The game loop function, used for game updates and rendering
@@ -213,7 +213,7 @@ function update() {
 		snake.direction = DOWN;
 	}
 	// each five frames update the game state.
-	if (frames%15 === 0) {
+	if (frames%5 === 0) {
 		// pop the last element from the snake queue i.e. the
 		// head
 		var nx = snake.last.x;
