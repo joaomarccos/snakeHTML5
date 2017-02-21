@@ -1,4 +1,4 @@
-# snakeHTML5
+# Snake Game with HTML5
 ## Play:
 https://joaomarccos.github.io/snakeHTML5/
 
