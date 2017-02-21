@@ -167,6 +167,7 @@ function main() {
  * Init the game
  */
 function init() {
+	clearInterval(interval);
 	record = false;
 	alert("Press OK to play!");	
 	document.getElementsByTagName('body')[0].click();
@@ -179,9 +180,11 @@ function init() {
 	snake.init(UP, sp.x, sp.y);
 	grid.set(SNAKE, sp.x, sp.y);
 	setFood();
-	interval = setInterval(function () {
+	setTimeout(function () {
+		interval = setInterval(function () {
 		setFood();
 	}, ((Math.random()*10) + 5) * 1000);	
+	}, 5000)	
 }
 /**
  * The game loop function, used for game updates and rendering
